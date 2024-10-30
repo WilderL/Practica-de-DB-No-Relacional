@@ -1,6 +1,8 @@
 
 package com.mycompany.articulos;
 
+import com.mycompany.articulos.MongoDB.Conexion;
+
 /**
  *
  * @author WilderL, EAGutierrez04 
@@ -8,6 +10,10 @@ package com.mycompany.articulos;
 public class Articulos {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        // Establece la conexión única a MongoDB
+        Conexion.obtenerInstancia().conectar();
+        
+        // Cierra la conexión al final
+        Conexion.obtenerInstancia().cerrar();
     }
 }
